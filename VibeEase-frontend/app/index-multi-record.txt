@@ -1,0 +1,122 @@
+import React, { useState, useEffect } from "react";
+import { View, Text, Button, ActivityIndicator } from "react-native";
+import { Audio } from "expo-av";
+import * as FileSystem from "expo-file-system";
+import * as Sharing from "expo-sharing";
+
+export default function Index() {
+  const [recording, setRecording] = useState<Audio.Recording | null>(null);
+  const [isRecording, setIsRecording] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [totalRecordingTime, setTotalRecordingTime] = useState(0); // Track total recording time
+  const [recordingUris, setRecordingUris] = useState<string[]>([]); // Store URIs of recordings
+
+  useEffect(() => {
+    return () => {
+      if (recording) {
+        recording.stopAndUnloadAsync();
+      }
+    };
+  }, [recording]);
+
+  const startRecording = async () => {
+    try {
+      const { granted } = await Audio.requestPermissionsAsync();
+      if (!granted) {
+        alert("Permission to access microphone is required!");
+        return;
+      }
+
+      const newRecording = new Audio.Recording();
+      await newRecording.prepareToRecordAsync(
+        Audio.RecordingOptionsPresets.LOW_QUALITY
+      );
+      await newRecording.startAsync();
+      setRecording(newRecording);
+      setIsRecording(true);
+      setTotalRecordingTime(0); // Reset the recording time
+    } catch (error) {
+      console.error("Error starting recording", error);
+    }
+  };
+
+  const stopRecording = async () => {
+    if (recording) {
+      try {
+        await recording.stopAndUnloadAsync();
+        const uri = recording.getURI();
+        if (uri) {
+          setRecordingUris((prevUris) => [...prevUris, uri]); // Store recording URI
+          setIsRecording(false);
+          setRecording(null); // Reset the recording instance after stopping
+        } else {
+          console.error("Failed to retrieve recording URI.");
+        }
+      } catch (error) {
+        console.error("Error stopping recording", error);
+      }
+    }
+  };
+
+  const downloadRecording = async (uri: string) => {
+    try {
+      const fileUri = FileSystem.documentDirectory + "recording.m4a";
+      await FileSystem.copyAsync({
+        from: uri,
+        to: fileUri,
+      });
+
+      // Share the file using the sharing module (this opens the native sharing options)
+      await Sharing.shareAsync(fileUri);
+    } catch (error) {
+      console.error("Error downloading recording", error);
+    }
+  };
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null;
+
+    if (isRecording) {
+      interval = setInterval(async () => {
+        if (totalRecordingTime >= 60) {
+          await stopRecording();
+          clearInterval(interval!);
+        } else {
+          // Stop recording every 10 seconds and download
+          await stopRecording();
+          await startRecording(); // Start a new recording
+          setTotalRecordingTime((prev) => prev + 10); // Increment recording time by 10s
+        }
+      }, 10000); // 10 seconds interval
+    } else {
+      if (interval) clearInterval(interval); // Clear interval when not recording
+    }
+
+    return () => {
+      if (interval) clearInterval(interval); // Cleanup on component unmount
+    };
+  }, [isRecording, totalRecordingTime]);
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Button
+        title={isRecording ? "Stop Recording" : "Start Recording"}
+        onPress={isRecording ? stopRecording : startRecording}
+      />
+      {loading && <ActivityIndicator size="large" color="blue" />}
+      {/* List the recorded URIs and allow the user to download them */}
+      {recordingUris.length > 0 && (
+        <View>
+          <Text>Recorded Files:</Text>
+          {recordingUris.map((uri, index) => (
+            <Button
+              key={index}
+              title={`Download Recording ${index + 1}`}
+              onPress={() => downloadRecording(uri)}
+            />
+          ))}
+        </View>
+      )}
+    </View>
+  );
+}
