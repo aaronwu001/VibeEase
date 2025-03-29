@@ -8,7 +8,8 @@ def generate_topic_suggestion(profiles, dialogue, current_speaker):
     prompt = f"""
 
     You are an AI assistant that helps people communicate more smoothly by monitoring the emotional flow of a conversation.
-
+    Your response must be within one sentence.
+    
     You will be given:
     - Profiles: the two speakers' interests and topics they avoid
     - Profile B: their interests and topics they avoid
@@ -31,7 +32,7 @@ def generate_topic_suggestion(profiles, dialogue, current_speaker):
     """
 
     # testing code
-    with open('curr_prompt.txt', 'w') as file:
+    with open('test_output/curr_prompt.txt', 'w') as file:
         file.write(prompt)  # Write the string to the file
 
     # Use the Gemini model to generate a response (simulated here)
@@ -74,5 +75,5 @@ if __name__ == '__main__':
     print(suggestion)
     
     # testing code
-    with open('suggestion.txt', 'w') as file:
+    with open('test_output/suggestion.txt', 'w') as file:
         file.write(suggestion)  # Write the string to the file
