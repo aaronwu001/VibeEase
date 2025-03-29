@@ -34,7 +34,7 @@ def create_conversation(user1_id, user2_id):
 # 2. Add a message to the conversation
 def add_dialogue(conversation_id: str, new_message: str):
     result = conversation_collection.update_one(
-        {"_id": conversation_id},
+        {"_id": ObjectId(conversation_id)},
         {"$push": {"dialogue": new_message}}
     )
     if result.modified_count == 0:
@@ -50,3 +50,11 @@ def remove_conversation(conversation_id: str):
     else:
         print("Conversation deleted successfully.")
 
+def get_conversation_by_id(conversation_id):
+    # Find the conversation by its conversation_id
+    conversation = conversation_collection.find_one({"_id": ObjectId(conversation_id)})
+    if conversation:
+        return conversation
+    else:
+        print("Conversation not found.")
+        return None
