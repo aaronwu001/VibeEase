@@ -1,3 +1,6 @@
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
 from gemini_endpoint import ask_gemini
 
 def generate_topic_suggestion(profiles, dialogue, current_speaker):
@@ -6,20 +9,31 @@ def generate_topic_suggestion(profiles, dialogue, current_speaker):
     
     # Construct the prompt for the Gemini model
     prompt = f"""
-
-    You are an AI assistant that helps people communicate more smoothly by monitoring the emotional flow of a conversation.
+    You are an AI assistant that helps people communicate more smoothly and respectfully by monitoring the emotional flow of a conversation.
 
     You will be given:
-    - Profiles: the two speakers' interests and topics they avoid
-    - Profile B: their interests and topics they avoid
-    - A short conversation history between the two users
+    - Profiles of both speakers (with interests and topics they avoid)
+    - A recent conversation history
+    - The speaker who is about to say the next line
 
-    Your tasks:
-    1. Identify the current emotional state of both users (choose from: happy, neutral, sad, stressed, confused, frustrated).
-    2. Determine if the current topic may cause discomfort or a negative reaction.
-    3. Decide whether to continue the current topic or redirect the conversation.
-    4. If redirection is needed, suggest a new topic based on shared interests and provide a starter sentence.
-    5. Provide a short explanation of your reasoning.
+    Your task is to generate a short suggestion message **for the current speaker** to help them continue the conversation.
+
+    Your suggestion should include:
+    1. A quick interpretation of the other speaker’s current emotional state
+    2. A judgment of whether the current topic may cause discomfort or not
+    3. A recommendation:
+    - If the current topic is fine → suggest continuing and give a sentence the user could say
+    - If the topic should be changed → suggest a new topic (based on shared interests) and give a new starter sentence
+
+    ✳️ Output format:
+    Just two short santances in natural, supportive English, addressed to the speaker.
+    Show up with three rows. 
+    The first row should be a brief descriptional word of the other speaker’s current emotional state, using the format " Other's emotion is [emotion] right now."
+    The seconf row should be a judgment(good/bad) of whether the current topic may cause discomfort or not. If it is a bad topic, suggest a new topic and starter sentence using the format "Please change to talk about [new topic] instead."
+    The third row should be a recommendation to the speaker to either continue the conversation or suggest a new topic and starter sentence.
+    Make sure it is calm, friendly, and actionable. Do **not** repeat the conversation history or profiles.
+
+    Here is the information:
 
     Profiles: 
     {str(profiles)}
@@ -68,6 +82,25 @@ if __name__ == '__main__':
             'avoid': ['politics', 'breakups']
         }
     }
+
+    # Testing Cases:
+    # profiles = {
+    #     'A': {
+    #         'interests': ['photography', 'cooking', 'travel'],
+    #         'avoid': ['politics']
+    #     },
+    #     'B': {
+    #         'interests': ['cooking', 'tech startups', 'travel'],
+    #         'avoid': ['sports']
+    #     }
+    # }
+
+    # dialogue = [
+    #     {"speaker": "A", "content": "I tried a new pasta recipe yesterday, it turned out amazing."},
+    #     {"speaker": "B", "content": "That sounds great! What kind of sauce did you use?"}
+    # ]
+    # current_speaker = "A"
+
 
     # Assuming it's A's turn to speak
     suggestion = generate_topic_suggestion(profiles, dialogue, current_speaker="A")
