@@ -5,6 +5,8 @@ import os
 import sys
 sys.path.append(os.path.abspath("db"))
 from conversation import create_conversation, add_dialogue, remove_conversation
+from update_convo import update_conversation
+from text_to_speech import transcribe_mp3
 
 app = Flask(__name__)
 
@@ -29,37 +31,40 @@ def start_conversation():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# # Route 2: Update conversation (every 10s)
-# @app.route("/update_conversation", methods=["POST"])
-# def update_conversation():
-#     conversation_id = request.form.get("conversation_id")
-#     voice_file = request.files.get("new_dialogue")
+# Route 2: Update conversation (every 10s)
+@app.route("/update_conversation", methods=["POST"])
+def update_conversation_route():
+    # Check if required parameters are provided
+    conversation_id = request.form.get("conversation_id")
+    if not conversation_id:
+        return jsonify({"error": "conversation_id is required"}), 400
 
-#     if not conversation_id or not voice_file:
-#         return jsonify({"error": "conversation_id and new_dialogue (voice) are required"}), 400
+    # Check if the MP3 file is provided
+    mp3_file = request.files.get("new_dialogue")
+    if not mp3_file:
+        return jsonify({"error": "MP3 file (new_dialogue) is required"}), 400
 
-#     try:
-#         # Save voice file temporarily
-#         with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
-#             voice_file.save(temp_audio.name)
-#             audio_path = temp_audio.name
+    try:
+        # Step 1: Transcribe the MP3 file
+        new_dialogue = transcribe_mp3(mp3_file)
 
-#         # Step 1: Speech to Text (placeholder)
-#         text = speech_to_text(audio_path)
+        # Step 2: Update the conversation
+        update_result = update_conversation(new_dialogue)
 
-#         # Step 2: Update conversation in MongoDB
-#         add_dialogue(conversation_id, text)
+        # Step 3: Check if the update contains a suggestion and return it
+        if "suggestion" in update_result:
+            suggestion = update_result.get("suggestion")
+            return jsonify({"suggestion": suggestion}), 200
+        else:
+            # If there's no suggestion, return an error
+            return jsonify({"error": "No suggestion found in the update result"}), 400
 
-#         # Step 3: Generate suggestion based on dialogue
-#         suggestion = generate_suggestion(text)
-
-
-#         # Cleanup temp file
-#         os.remove(audio_path)
-
-#         return jsonify({"suggestion": suggestion})
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
+    except ValueError as e:
+        # Catch specific errors related to the transcription or conversation update
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        # Catch any other unexpected errors
+        return jsonify({"error": "An unexpected error occurred: " + str(e)}), 500
 
 # Route 3: End conversation
 @app.route("/end_conversation", methods=["POST"])
