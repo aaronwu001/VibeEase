@@ -23,7 +23,11 @@ def generate_suggestion(text):
 # Route 1: Start a new conversation
 @app.route("/start_conversation", methods=["POST"])
 def start_conversation():
-    data = request.get_json()
+    data = request.get_json()  # Parse JSON data
+
+    if not data:
+        return "No JSON data provided", 400  # Bad Request
+
     user1_id = data.get("user_id")
     user2_id = data.get("other_user_id")
 

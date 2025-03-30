@@ -10,6 +10,8 @@ export default function Index() {
   const [recording, setRecording] = useState<Audio.Recording | null>(null);
   const [isRecording, setIsRecording] = useState(false);
   const [audioUri, setAudioUri] = useState<string | null>(null);
+  const userId1 = "67e8259487c915a2c5841751";
+  const userId2 = "67e82599a7a20b37bda740fd";
 
   const requestPermissions = async () => {
     const { status } = await Audio.requestPermissionsAsync();
@@ -23,6 +25,31 @@ export default function Index() {
 
   const startRecording = async () => {
     try {
+      const jsonData = {
+        user_id: userId1,
+        other_user_id: userId2,
+      };
+
+      const response = await fetch("http://127.0.0.1:5000/start_conversation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      });
+
+      console.log(response);
+
+      if (response.ok) {
+        Alert.alert("Successfully started a conversation");
+      } else {
+        Alert.alert(
+          "Conversation pairing failed",
+          "There was an error starting a conversation."
+        );
+        return;
+      }
+
       if (isRecording) {
         console.log("Recording already in progress.");
         return; // Prevent starting a new recording if one is active
