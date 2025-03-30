@@ -160,10 +160,12 @@ export default function Record({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <Link href="/">{"Go Back"}</Link>
-      <Text style={styles.title}>🎙️ Voice Recorder</Text>
+      <Link href="/" style={styles.goBackLink}>
+        {"Go Back"}
+      </Link>
+      <Text style={styles.title}>😎 Vibe Coach 🎙️</Text>
       <Text style={styles.status}>
-        {isRecording ? "Recording..." : "Tap to record"}
+        {isRecording ? "Recording..." : "Tap to record 👇"}
       </Text>
       <Button
         mode="contained"
@@ -186,6 +188,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#f5f5f5",
     padding: 20,
+  },
+  goBackLink: {
+    position: "absolute", // Absolute position to place it at the top left
+    top: 20,
+    left: 20,
+    fontSize: 18,
+    color: "#6200ee", // Blue color for the link
+    fontWeight: "bold",
   },
   title: {
     fontSize: 24,
