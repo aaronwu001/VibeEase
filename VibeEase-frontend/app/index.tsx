@@ -61,14 +61,48 @@ export default function Index() {
         await FileSystem.moveAsync({ from: uri, to: newFileUri });
         console.log("File saved as MP3:", newFileUri);
 
-        if (await Sharing.isAvailableAsync()) {
-          await Sharing.shareAsync(newFileUri);
-        } else {
-          Alert.alert("Sharing not available on this device.");
-        }
+        // Upload the MP3 file to an external API
+        uploadToAPI(newFileUri);
+
+        // if (await Sharing.isAvailableAsync()) {
+        //   await Sharing.shareAsync(newFileUri);
+        // } else {
+        //   Alert.alert("Sharing not available on this device.");
+        // }
       }
     } catch (error) {
       console.log("Failed to stop recording:", error);
+    }
+  };
+
+  const uploadToAPI = async (fileUri: string) => {
+    const formData = new FormData();
+
+    try {
+      // Fetch the file as a Blob
+      const fileBlob = await fetch(fileUri);
+      const blob = await fileBlob.blob();
+
+      // Append the file Blob to the FormData
+      formData.append("file", blob, "recording.mp3");
+
+      //TODO: change the api endpoint
+      const response = await fetch("https://your-api-endpoint.com/upload", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (response.ok) {
+        Alert.alert("File uploaded successfully!");
+      } else {
+        Alert.alert("Upload failed", "There was an error uploading the file.");
+      }
+    } catch (error) {
+      console.log("Upload error:", error);
+      Alert.alert("Upload failed", "Network error occurred.");
     }
   };
 
