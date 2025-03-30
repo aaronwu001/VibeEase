@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
+import { Button } from "react-native-paper";
 
 export default function Index() {
   return (
@@ -15,9 +16,9 @@ export default function Index() {
           Connect with like-minded people effortlessly.
         </Text>
         <Link href="/select" style={styles.link}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Find Your Vibe</Text>
-          </TouchableOpacity>
+          <Button style={styles.button} labelStyle={styles.buttonLabel}>
+            Find Your Vibe
+          </Button>
         </Link>
       </View>
     </LinearGradient>
@@ -57,9 +58,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#3498db",
-    paddingVertical: 16,
-    paddingHorizontal: 40,
-    borderRadius: 8,
+    paddingVertical: 10, // Increased padding for more height
+    paddingHorizontal: 20, // Increased horizontal padding for a wider button
+    borderRadius: 20, // Rounded corners for a more modern look
     alignItems: "center",
     justifyContent: "center",
     shadowColor: "#000",
@@ -68,10 +69,10 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: 20,
+  buttonLabel: {
+    fontSize: 20, // Larger font size for the button text
     fontWeight: "600",
-    fontFamily: "System",
+    color: "#fff", // White text color
+    textAlign: "center",
   },
 });

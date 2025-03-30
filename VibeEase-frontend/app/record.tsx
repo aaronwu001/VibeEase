@@ -160,8 +160,8 @@ export default function Record({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <Link href="/" style={styles.goBackLink}>
-        {"Go Back"}
+      <Link href="/select" style={styles.goBackLink}>
+        <Text>Go Back</Text>
       </Link>
       <Text style={styles.title}>😎 Vibe Coach 🎙️</Text>
       <Text style={styles.status}>
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   goBackLink: {
     position: "absolute", // Absolute position to place it at the top left
-    top: 20,
+    top: 70,
     left: 20,
     fontSize: 18,
     color: "#6200ee", // Blue color for the link
