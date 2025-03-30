@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS #Import CORS
 from werkzeug.utils import secure_filename
 import tempfile
 import os
@@ -7,6 +8,7 @@ sys.path.append(os.path.abspath("db"))
 from conversation import create_conversation, add_dialogue, remove_conversation
 
 app = Flask(__name__)
+CORS(app)
 
 # Placeholder: speech-to-text conversion using Gemini
 def speech_to_text(audio_path):
@@ -37,13 +39,26 @@ def start_conversation():
 # Route 2: Update conversation (every 10s)
 @app.route("/update_conversation", methods=["POST"])
 def update_conversation():
+    print('request', request)
+    print('updating conversation now')
     conversation_id = request.form.get("conversation_id")
     voice_file = request.files.get("new_dialogue")
+
+    print("convo id", conversation_id)
+    print("voice file", voice_file)
 
     if not conversation_id or not voice_file:
         return jsonify({"error": "conversation_id and new_dialogue (voice) are required"}), 400
 
     try:
+        # Check if the file is valid
+        if not voice_file:
+            return jsonify({"error": "No file uploaded"}), 400
+        
+        # Optionally, you can check the file's type (e.g., ensure it's an MP3 or WAV)
+        if 'audio' not in voice_file.content_type:
+            return jsonify({"error": "File is not an audio file"}), 400
+        
         # Save voice file temporarily
         with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
             voice_file.save(temp_audio.name)
@@ -51,6 +66,7 @@ def update_conversation():
 
         # Step 1: Speech to Text (placeholder)
         text = speech_to_text(audio_path)
+        print(f"Transcribed text: {text}")
 
         # Step 2: Update conversation in MongoDB
         add_dialogue(conversation_id, text)

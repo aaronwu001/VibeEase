@@ -23,9 +23,13 @@ export default function Index() {
 
   const startRecording = async () => {
     try {
+      if (isRecording) {
+        console.log("Recording already in progress.");
+        return; // Prevent starting a new recording if one is active
+      }
+
       if (!hasPermission) {
         await requestPermissions();
-        if (!hasPermission) return;
       }
 
       await Audio.setAudioModeAsync({
@@ -38,6 +42,7 @@ export default function Index() {
       setRecording(recording);
       setIsRecording(true);
       console.log("Recording started...");
+
       await recording.startAsync();
     } catch (error) {
       console.log("Failed to start recording:", error);
@@ -55,20 +60,48 @@ export default function Index() {
 
       if (uri) {
         setAudioUri(uri);
-        const fileName = `recording-${Date.now()}.mp3`;
-        const newFileUri = FileSystem.documentDirectory + fileName;
 
-        await FileSystem.moveAsync({ from: uri, to: newFileUri });
-        console.log("File saved as MP3:", newFileUri);
-
-        if (await Sharing.isAvailableAsync()) {
-          await Sharing.shareAsync(newFileUri);
-        } else {
-          Alert.alert("Sharing not available on this device.");
-        }
+        // Upload the file to the server (may not be in mp3)
+        uploadToAPI(uri);
       }
     } catch (error) {
       console.log("Failed to stop recording:", error);
+    }
+  };
+
+  const uploadToAPI = async (fileUri: string) => {
+    const formData = new FormData();
+
+    try {
+      // Fetch the file as a Blob
+      const fileBlob = await fetch(fileUri);
+      const blob = await fileBlob.blob();
+
+      // Append the file Blob to the FormData
+      formData.append("new_dialogue", blob, "recording.mp3");
+      formData.append("conversation_id", "fake_conversation_id");
+
+      console.log("trying to upload to API now");
+
+      const response = await fetch(
+        "http://127.0.0.1:5000/update_conversation",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      console.log(response);
+
+      if (response.ok) {
+        const text = await response.text();
+        Alert.alert("Success", `Transcription: ${text}`);
+      } else {
+        Alert.alert("Upload failed", "There was an error uploading the file.");
+      }
+    } catch (error) {
+      console.log("Upload error:", error);
+      Alert.alert("Upload failed", "Network error occurred.");
     }
   };
 
