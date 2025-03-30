@@ -34,7 +34,7 @@ def start_conversation():
     if not user1_id or not user2_id:
         return jsonify({"error": "user_id and other_user_id are required"}), 400
 
-    try:
+    try: 
         conversation_id = create_conversation(user1_id, user2_id)
         return jsonify({"conversation_id": str(conversation_id)})
     except Exception as e:

@@ -10,6 +10,7 @@ export default function Index() {
   const [recording, setRecording] = useState<Audio.Recording | null>(null);
   const [isRecording, setIsRecording] = useState(false);
   const [audioUri, setAudioUri] = useState<string | null>(null);
+  const [conversationId, setConversationId] = useState<string | null>(null);
   const userId1 = "67e8259487c915a2c5841751";
   const userId2 = "67e82599a7a20b37bda740fd";
 
@@ -50,6 +51,13 @@ export default function Index() {
         return;
       }
 
+      const data = await response.json();
+
+      const conversationId = data.conversation_id; // Extract the conversation_id
+      console.log("Conversation ID:", conversationId);
+
+      setConversationId(conversationId);
+
       if (isRecording) {
         console.log("Recording already in progress.");
         return; // Prevent starting a new recording if one is active
@@ -78,6 +86,20 @@ export default function Index() {
 
   const stopRecording = async () => {
     if (!recording) return;
+
+    if (!conversationId) return;
+
+    const jsonData = {
+      conversation_id: conversationId,
+    };
+
+    const response = await fetch("http://127.0.0.1:5000/end_conversation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonData),
+    });
 
     try {
       await recording.stopAndUnloadAsync();
