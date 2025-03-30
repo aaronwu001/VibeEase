@@ -21,7 +21,7 @@ def ask_gemini(query):
 
 def generate_suggestion(conversation):
     # Organize the conversation history into a string
-    dialogue = "\n".join(conversation.get('dialogue', ''))[:1800]
+    dialogue = "\n".join(conversation.get('dialogue', ''))[-1800:]
     users = conversation.get('users') or {}
 
     # Construct the prompt for the Gemini model
