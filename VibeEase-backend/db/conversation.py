@@ -23,7 +23,6 @@ def create_conversation(user1_id, user2_id):
         raise ValueError("One or both users not found.")
 
     conversation = {
-        "conversation_id": str(uuid.uuid4()),
         "users": [user1, user2],
         "dialogue": []
     }
@@ -35,7 +34,7 @@ def create_conversation(user1_id, user2_id):
 # 2. Add a message to the conversation
 def add_dialogue(conversation_id: str, new_message: str):
     result = conversation_collection.update_one(
-        {"conversation_id": conversation_id},
+        {"_id": ObjectId(conversation_id)},
         {"$push": {"dialogue": new_message}}
     )
     if result.modified_count == 0:
@@ -45,9 +44,18 @@ def add_dialogue(conversation_id: str, new_message: str):
 
 # 3. Remove a conversation
 def remove_conversation(conversation_id: str):
-    result = conversation_collection.delete_one({"conversation_id": conversation_id})
+    result = conversation_collection.delete_one({"_id": ObjectId(conversation_id)})
     if result.deleted_count == 0:
         print("Conversation not found.")
     else:
         print("Conversation deleted successfully.")
 
+def get_conversation_by_id(conversation_id):
+    # Find the conversation by its conversation_id
+    conversation = conversation_collection.find_one({"_id": ObjectId(conversation_id)})
+    if conversation:
+        return conversation
+    else:
+        print("Conversation not found.")
+        return None
+    
