@@ -1,0 +1,31 @@
+[
+  {
+    "user_id": "1013",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "45",
+    "error": "Gemini response is not valid JSON."
+  }
+]

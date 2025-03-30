@@ -1,0 +1,682 @@
+[
+  {
+    "user_id": "1000",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Series",
+      "Movies",
+      "Sushi",
+      "Ride Sharing"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Help Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Sushi"
+    ],
+    "Netflix": [
+      "Sci-Fi Series (Stranger Things)",
+      "Crime Drama Movies (The Irishman)",
+      "Crime Thriller Series (Breaking Bad)"
+    ],
+    "Uber": [
+      "Airport Rides",
+      "San Francisco"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1001",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Shows",
+      "Movies",
+      "Food",
+      "Travel",
+      "Self-Improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Improvement Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Burrito",
+      "Vegan Salad",
+      "Chicken Sandwich"
+    ],
+    "Netflix": [
+      "Sci-Fi/Thriller Series (Stranger Things)",
+      "Crime Dramas (The Irishman, Breaking Bad)"
+    ],
+    "Uber": [
+      "Frequent UberX rides",
+      "Travel to/from SFO Airport",
+      "San Francisco based"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1002",
+    "interest": [
+      "Sushi",
+      "Burritos",
+      "Mexican Food",
+      "Japanese Food",
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Self-Improvement",
+      "True Crime",
+      "Sci-Fi",
+      "Thriller",
+      "Drama"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)"
+    ],
+    "UberEats": [
+      "Sushi Combo",
+      "Burrito"
+    ],
+    "Netflix": [
+      "Sci-Fi Series (Stranger Things)",
+      "Crime Dramas (The Irishman, Breaking Bad)",
+      "Thriller"
+    ],
+    "Uber": [
+      "Airport Rides (SFO)",
+      "Rides in San Francisco"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1003",
+    "interest": [
+      "Vegan Food",
+      "Pop Music",
+      "Hip Hop Music",
+      "News Podcasts",
+      "Self-Improvement Books",
+      "Sci-Fi",
+      "Thriller",
+      "Drama",
+      "Crime"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop Music (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Vegan Salad"
+    ],
+    "Netflix": [
+      "Sci-Fi, Thriller, Drama (Stranger Things, Breaking Bad)",
+      "Crime, Drama (The Irishman)"
+    ],
+    "Uber": [
+      "Frequent UberX rides",
+      "Typical trip: ~3 miles, ~13 minutes",
+      "Common route: San Francisco (123 Main St) - SFO Airport"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1004",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Shows",
+      "Movies",
+      "Food Delivery",
+      "Ride Sharing"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Improvement Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Chicken Sandwich"
+    ],
+    "Netflix": [
+      "Sci-Fi/Thriller Series (Stranger Things, Breaking Bad)",
+      "Crime Drama Movies (The Irishman)"
+    ],
+    "Uber": [
+      "Ride sharing to/from San Francisco and SFO Airport",
+      "Uses UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1005",
+    "interest": [
+      "Pizza",
+      "Salad",
+      "Italian food",
+      "Vegan food",
+      "Pop music",
+      "Hip Hop music",
+      "News",
+      "Self-improvement",
+      "Sci-Fi",
+      "Thriller",
+      "Drama",
+      "Crime"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily podcast",
+      "Atomic Habits audiobook"
+    ],
+    "UberEats": [
+      "Pizza Margherita",
+      "Vegan Salad"
+    ],
+    "Netflix": [
+      "Stranger Things",
+      "The Irishman",
+      "Breaking Bad",
+      "Sci-Fi, Thriller, Drama genres"
+    ],
+    "Uber": [
+      "UberX",
+      "San Francisco",
+      "SFO Airport"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1006",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Shows",
+      "Movies",
+      "Sushi",
+      "American Food",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Improvement Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Sushi Combo",
+      "Chicken Sandwich"
+    ],
+    "Netflix": [
+      "Sci-Fi/Thriller Series (Stranger Things)",
+      "Crime Drama Movies (The Irishman)",
+      "Crime/Thriller Series (Breaking Bad)"
+    ],
+    "Uber": [
+      "Airport Rides",
+      "San Francisco"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1007",
+    "interest": [
+      "music",
+      "podcasts",
+      "audiobooks",
+      "tv series",
+      "movies",
+      "sushi",
+      "transportation",
+      "self-improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News podcasts (The Daily)",
+      "Self-improvement audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Sushi Combo"
+    ],
+    "Netflix": [
+      "Sci-Fi, Thriller, Drama series (Stranger Things, Breaking Bad)",
+      "Crime, Drama movies (The Irishman)"
+    ],
+    "Uber": [
+      "Airport rides (SFO)",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1008",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Shows",
+      "Movies",
+      "Fast Food",
+      "Ride Sharing"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Help Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Chicken Sandwich"
+    ],
+    "Netflix": [
+      "Sci-Fi/Thriller Series (Stranger Things, Breaking Bad)",
+      "Crime Drama Movies (The Irishman)",
+      "Standard Plan"
+    ],
+    "Uber": [
+      "UberX",
+      "Airport Rides (SFO)",
+      "San Francisco Rides"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1009",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "TV Shows",
+      "Movies",
+      "Fast Food",
+      "Ride Sharing"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "News Podcasts (The Daily)",
+      "Self-Improvement Audiobooks (Atomic Habits)"
+    ],
+    "UberEats": [
+      "Chicken Sandwich",
+      "Burrito"
+    ],
+    "Netflix": [
+      "Sci-Fi/Thriller Series (Stranger Things, Breaking Bad)",
+      "Crime Dramas (The Irishman)"
+    ],
+    "Uber": [
+      "Frequent Airport Rides (SFO)",
+      "Uses UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1010",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Audiobooks",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent UberX User",
+      "San Francisco Airport",
+      "San Francisco City"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1011",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Self-Improvement",
+      "Audiobooks",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Travel",
+      "Airport Transportation",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "18184",
+    "interest": [
+      "travel"
+    ],
+    "avoid": [],
+    "Spotify": [],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX service",
+      "Residence likely near 123 Main St, San Francisco, CA 94105"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1012",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Airport Rides",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1014",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan subscriber",
+      "Listens to Taylor Swift, Kendrick Lamar",
+      "Listens to The Daily podcast",
+      "Listens to Atomic Habits audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX",
+      "Lives in San Francisco",
+      "Travel"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1015",
+    "interest": [
+      "Pop Music",
+      "Hip Hop Music",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "San Francisco International Airport (SFO)",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1016",
+    "interest": [
+      "music",
+      "podcasts",
+      "audiobooks",
+      "pop music",
+      "hip hop",
+      "news",
+      "self-improvement",
+      "travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX",
+      "Home location: San Francisco, CA"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1017",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Travel (Airport rides)",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1018",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Audiobooks",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan Subscriber",
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent Airport Trips",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1019",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop Music",
+      "Podcasts",
+      "News",
+      "Self-Improvement",
+      "Audiobooks",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent UberX user",
+      "Travels to/from SFO Airport",
+      "Lives in San Francisco"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1013",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "45",
+    "error": "Gemini response is not valid JSON."
+  }
+]
