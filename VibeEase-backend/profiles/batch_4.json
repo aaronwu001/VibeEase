@@ -1,0 +1,148 @@
+[
+  {
+    "user_id": "1015",
+    "interest": [
+      "Pop Music",
+      "Hip Hop Music",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "San Francisco International Airport (SFO)",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1016",
+    "interest": [
+      "music",
+      "podcasts",
+      "audiobooks",
+      "pop music",
+      "hip hop",
+      "news",
+      "self-improvement",
+      "travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX",
+      "Home location: San Francisco, CA"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1017",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Travel (Airport rides)",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1018",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Audiobooks",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan Subscriber",
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent Airport Trips",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1019",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop Music",
+      "Podcasts",
+      "News",
+      "Self-Improvement",
+      "Audiobooks",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent UberX user",
+      "Travels to/from SFO Airport",
+      "Lives in San Francisco"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  }
+]

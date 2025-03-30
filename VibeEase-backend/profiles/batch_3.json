@@ -1,0 +1,141 @@
+[
+  {
+    "user_id": "1010",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Audiobooks",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast",
+      "Atomic Habits Audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent UberX User",
+      "San Francisco Airport",
+      "San Francisco City"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1011",
+    "interest": [
+      "Music",
+      "Pop Music",
+      "Hip Hop",
+      "Podcasts",
+      "News",
+      "Self-Improvement",
+      "Audiobooks",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Pop Music (Taylor Swift)",
+      "Hip Hop (Kendrick Lamar)",
+      "Podcast (The Daily)",
+      "Audiobook (Atomic Habits)"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Travel",
+      "Airport Transportation",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "18184",
+    "interest": [
+      "travel"
+    ],
+    "avoid": [],
+    "Spotify": [],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX service",
+      "Residence likely near 123 Main St, San Francisco, CA 94105"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1012",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan",
+      "Taylor Swift",
+      "Kendrick Lamar",
+      "The Daily Podcast"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Airport Rides",
+      "San Francisco",
+      "UberX"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  },
+  {
+    "user_id": "1014",
+    "interest": [
+      "Music",
+      "Podcasts",
+      "Audiobooks",
+      "Pop Music",
+      "Hip Hop",
+      "News",
+      "Self-Improvement",
+      "Travel"
+    ],
+    "avoid": [],
+    "Spotify": [
+      "Premium Family Plan subscriber",
+      "Listens to Taylor Swift, Kendrick Lamar",
+      "Listens to The Daily podcast",
+      "Listens to Atomic Habits audiobook"
+    ],
+    "UberEats": [],
+    "Netflix": [],
+    "Uber": [
+      "Frequent trips to/from SFO Airport",
+      "Uses UberX",
+      "Lives in San Francisco",
+      "Travel"
+    ],
+    "Walmart": [],
+    "Doordash": [],
+    "Instacart": []
+  }
+]
