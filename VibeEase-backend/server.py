@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath("db"))
 from conversation import create_conversation, add_dialogue, remove_conversation
 from update_convo import update_conversation
 from text_to_speech import transcribe_mp3
+from change_mp3 import change_mp3
 
 app = Flask(__name__)
 CORS(app)
@@ -52,13 +53,17 @@ def update_conversation():
         return jsonify({"error": "conversation_id and new_dialogue (voice) are required"}), 400
 
     # Check if the MP3 file is provided
-    mp3_file = request.files.get("new_dialogue")
+    non_mp3_file = request.files.get("new_dialogue")
+    mp3_file = change_mp3(non_mp3_file)
+
+    print("mp3 converted file", mp3_file)
     if not mp3_file:
         return jsonify({"error": "MP3 file (new_dialogue) is required"}), 400
 
     try:
         # Step 1: Transcribe the MP3 file
         new_dialogue = transcribe_mp3(mp3_file)
+        console.log("done transcribing", new_dialogue)
 
         # Step 2: Update the conversation
         update_result = update_conversation(new_dialogue)
